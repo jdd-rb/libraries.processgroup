@@ -189,7 +189,7 @@ type processAction func(process Process)
 		// Build a process for this
 		myProcess := Process{ Name: name }
 		myProcess.context, myProcess.cancel = context.WithCancel(pg.context)
-		myProcess.channel = make(chan interface{}, 100)
+		myProcess.channel = make(chan interface{}, 5000)
 		myProcess.group_channel = pg.channel
 		myProcess.subscribed_channels = make([]chan interface{}, 0)
 
