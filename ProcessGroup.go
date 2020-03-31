@@ -97,7 +97,7 @@ type processAction func(process Process)
 
 							if pg.ShowLog {
 
-								fmt.Println("[" + time.Now().Format("2006-01-02 15:04:05") + "] - " + msg.Sender + " - " + msg.Message.(string))
+								fmt.Println("[ " + time.Now().Format("2006-01-02 - 15:04:05") + " ] - Info  - " + msg.Sender + " - " + msg.Message.(string))
 							}
 
 						} else if msg.Error {
@@ -112,7 +112,7 @@ type processAction func(process Process)
 
 							if pg.ShowErrors {
 
-								fmt.Println("[" + time.Now().Format("2006-01-02 15:04:05") + "] - " + msg.Sender + " - Error: " + msg.Message.(error).Error())
+								fmt.Println("[ " + time.Now().Format("2006-01-02 - 15:04:05") + " ] - Error - " + msg.Sender + " - " + msg.Message.(error).Error())
 							}
 
 						} else if(msg.Broadcast) {
